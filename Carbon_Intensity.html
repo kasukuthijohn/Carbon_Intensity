@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>A simple map</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <style>
+      #id1{
+        color:red;
+      }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+          position: absolute;
+          width: 70%;
+          height: 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script>
+          var map = L.map('map')
+                .setView([20,20],1);
+
+
+                var basemap = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+                    subdomains: 'abcd',
+                    maxZoom: 20
+                }).addTo(map);
+            var geojson=
+              {
+                "type": "FeatureCollection",
+                "features": [
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "marker-color": "#13be93",
+                      "marker-size": "medium",
+                      "marker-symbol": "circle",
+                      "Name": "Russia",
+                      "CarbonIntensity": "3.2 GT"
+                    },
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [
+                        93.1640625,
+                        61.60639637138628
+                      ]
+                    }
+                  },
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "marker-color": "#08dd33",
+                      "marker-size": "medium",
+                      "marker-symbol": "",
+                      "Name": "China",
+                      "CarbonIntensity": "3.9 Gt"
+                    },
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [
+                        94.921875,
+                        30.751277776257812
+                      ]
+                    }
+                  },
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "marker-color": "#f41010",
+                      "marker-size": "medium",
+                      "marker-symbol": "",
+                      "Name": "Green Land",
+                      "CarbonIntensity": "2.02 GT"
+                    },
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [
+                        -41.1328125,
+                        74.1160468394894
+                      ]
+                    }
+                  },
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "marker-color": "#2e14f5",
+                      "marker-size": "medium",
+                      "marker-symbol": "",
+                      "Name": "US",
+                      "CarbonIntensity": "3.8 GT"
+                    },
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [
+                        -110.0390625,
+                        34.88593094075317
+                      ]
+                    }
+                  },
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "marker-color": "#ef4115",
+                      "marker-size": "medium",
+                      "marker-symbol": "",
+                      "Name": "Australia",
+                      "CarbonIntensity": "3.6 GT"
+                    },
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [
+                        134.296875,
+                        -23.88583769986199
+                      ]
+                    }
+                  },
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "marker-color": "#deec18",
+                      "marker-size": "medium",
+                      "marker-symbol": "",
+                      "Name": "Oman",
+                      "CarbonIntensity": "1.0 GT"
+                    },
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [
+                        45.703125,
+                        23.885837699862005
+                      ]
+                    }
+                  },
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "marker-color": "#ec0941",
+                      "marker-size": "medium",
+                      "marker-symbol": "",
+                      "Name": "Canada",
+                      "CarbonIntensity": "3.0 GT"
+                    },
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [
+                        -107.22656249999999,
+                        55.57834467218206
+                      ]
+                    }
+                  },
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "marker-color": "#11cbe4",
+                      "marker-size": "medium",
+                      "marker-symbol": "",
+                      "Name": "Brazil",
+                      "CarbonIntensity": "2.08 GT"
+                    },
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [
+                        -45,
+                        -11.178401873711772
+                      ]
+                    }
+                  },
+
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "marker-color": "#7e7e7e",
+                      "marker-size": "medium",
+                      "marker-symbol": "",
+                      "Name": "India",
+                      "CarbonIntensity": "3.1GT"
+                    },
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [
+                        77.34374999999999,
+                        16.636191878397664
+                      ]
+                    }
+                  },
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "marker-color": "#7e7e7e",
+                      "marker-size": "medium",
+                      "marker-symbol": "",
+                      "Name": "Argentaina",
+                      "CarbonIntensity": "1.8GT"
+                    },
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [
+                        -64.6875,
+                        -37.71859032558814
+                      ]
+                    }
+                  },
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "marker-color": "#7e7e7e",
+                      "marker-size": "medium",
+                      "marker-symbol": "",
+                      "Name": "Algeriya",
+                      "CarbonIntensity": "1.5GT"
+                    },
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [
+                        -2.8125,
+                        25.799891182088334
+                      ]
+                    }
+                  },
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "marker-color": "#7e7e7e",
+                      "marker-size": "medium",
+                      "marker-symbol": "",
+                      "Name": "South Africa",
+                      "CarbonIntensity": "2.01GT"
+                    },
+                    "geometry": {
+                      "type": "Point",
+                      "coordinates": [
+                        25.3125,
+                        -28.30438068296277
+                      ]
+                    }
+                  }
+                ]
+              }
+L.geoJSON(geojson,{
+  onEachFeature:function(feature,layer){
+layer.bindPopup('<h3 id="id1">'+feature.properties.Name+'<h3 id="id1"><p>Carbon Intensity : '+feature.properties.CarbonIntensity);
+  layer.feature.properties.markercolor;
+  }
+
+}).addTo(map);
+    </script>
+</body>
+
+</html>
